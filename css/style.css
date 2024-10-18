@@ -171,3 +171,14 @@ body {
     margin-right: 10px;
     background: #FB5;
 }
+
+.copy {
+    grid-column: 2 / 5;
+    margin-bottom: 2rem;
+    background-color: #FB5;
+}
+
+.copy p{
+    padding: 20px;
+    font-weight: bold;
+}
