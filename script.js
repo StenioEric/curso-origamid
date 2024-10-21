@@ -1,4 +1,3 @@
-
 function initTabNav() {
   const tabMenu = document.querySelectorAll(".js-tabmenu li");
   const tabContent = document.querySelectorAll(".js-tabcontent section");
@@ -21,3 +20,18 @@ function initTabNav() {
   }
 }
 initTabNav();
+
+function initAccordion {
+  const acoordionList = document.querySelectorAll('.js-accordion dt');
+
+  function activeAccordion() {
+    this.classList.add('ativo');
+    this.nextElementSibling.classList.add('ativo');
+  }
+
+  acoordionList.forEach((item) => {
+    item.addEventListener('click', activeAccordion);
+  })
+}
+
+initAccordion();
