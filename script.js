@@ -21,17 +21,21 @@ function initTabNav() {
 }
 initTabNav();
 
-function initAccordion {
-  const acoordionList = document.querySelectorAll('.js-accordion dt');
+function initAccordion() {
+  const acoordionList = document.querySelectorAll(".js-accordion dt");
+  const activeClass = "ativo";
+  acoordionList[0].classList.add(activeClass);
+  acoordionList[0].nextElementSibling.classList.add(activeClass);
 
-  function activeAccordion() {
-    this.classList.add('ativo');
-    this.nextElementSibling.classList.add('ativo');
+  if (acoordionList.length) {
+    function activeAccordion() {
+      this.classList.toggle(activeClass);
+      this.nextElementSibling.classList.toggle(activeClass);
+    }
+
+    acoordionList.forEach((item) => {
+      item.addEventListener("click", activeAccordion);
+    });
   }
-
-  acoordionList.forEach((item) => {
-    item.addEventListener('click', activeAccordion);
-  })
 }
-
 initAccordion();
