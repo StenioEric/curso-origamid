@@ -1,3 +1,5 @@
+// Funcão que relaciona o click em algumas das imagens dos animais,
+// com a sua devida descrição
 function initTabNav() {
   const tabMenu = document.querySelectorAll(".js-tabmenu li");
   const tabContent = document.querySelectorAll(".js-tabcontent section");
@@ -21,6 +23,7 @@ function initTabNav() {
 }
 initTabNav();
 
+// Função para ativar o comportamento de Accordion na FAQ
 function initAccordion() {
   const acoordionList = document.querySelectorAll(".js-accordion dt");
   const activeClass = "ativo";
@@ -40,6 +43,7 @@ function initAccordion() {
 }
 initAccordion();
 
+// Função que suaviza o scroll ao clicar nos links internos da página
 function initScrollSuave() {
   const linksInternos = document.querySelectorAll('.js-menu a[href^="#"]');
 
@@ -67,6 +71,7 @@ function initScrollSuave() {
 }
 initScrollSuave();
 
+// Função de animação no scroll da página
 function initAnimaScroll() {
   const sections = document.querySelectorAll(".js-scroll");
   if (sections.length) {
