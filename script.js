@@ -40,14 +40,14 @@ function initAccordion() {
 }
 initAccordion();
 
-function initScrollSuave (){
+function initScrollSuave() {
   const linksInternos = document.querySelectorAll('.js-menu a[href^="#"]');
 
   function scrollSection(event) {
     event.preventDefault();
-    const href = event.currentTarget.getAttribute('href');
+    const href = event.currentTarget.getAttribute("href");
     const section = document.querySelector(href);
-    
+
     // const topo = section.offsetTop;
     // window.scrollTo({
     //   top: topo,
@@ -55,33 +55,34 @@ function initScrollSuave (){
     // });
 
     section.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
+      behavior: "smooth",
+      block: "start",
     });
   }
 
   // Iteração para adicionar event listener a cada link
   linksInternos.forEach((link) => {
-    link.addEventListener('click', scrollSection);
+    link.addEventListener("click", scrollSection);
   });
 }
-
 initScrollSuave();
 
 function initAnimaScroll() {
-  const sections = document.querySelectorAll('.js-scroll');
-  if (section.length) {
+  const sections = document.querySelectorAll(".js-scroll");
+  if (sections.length) {
     const windowMetade = window.innerHeight * 0.6;
 
     function animaScroll() {
-      sections,forEach((section) => {
-        const sectionTop = section.getBoundingCleintReact().top;
-        const isSectionVisible = (section - windowMetade) < 0;
-        if(isSectionVisible)
-          section.classList.add('ativo')
-      })
+      sections.forEach((section) => {
+        const sectionTop = section.getBoundingClientRect().top;
+        const isSectionVisible = sectionTop - windowMetade < 0;
+        if (isSectionVisible) {
+          section.classList.add("ativo");
+        }
+      });
     }
     animaScroll();
-    window.addEventListener('scroll', animaScroll)
+    window.addEventListener("scroll", animaScroll);
   }
 }
+initAnimaScroll();
